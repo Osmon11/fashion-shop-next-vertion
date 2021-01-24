@@ -1,0 +1,29 @@
+{
+  "name": "apollo-mongo-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/index.js"
+  },
+  "author": "osmon",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "@accounts/graphql-api": "^0.30.0",
+    "@accounts/mongo": "^0.30.0",
+    "@accounts/password": "^0.30.0",
+    "@accounts/server": "^0.30.0",
+    "@graphql-modules/core": "^0.7.17",
+    "@graphql-toolkit/schema-merging": "^0.10.7",
+    "apollo-server": "^2.19.2",
+    "graphql": "^15.4.0",
+    "mongoose": "^5.11.12"
+  }
+}

@@ -1,64 +1,37 @@
-import { useDispatch } from 'react-redux'
-import { initializeStore } from '../lib/redux'
-import { initializeApollo } from '../lib/apollo'
-import useInterval from '../lib/useInterval'
-import Layout from '../components/Layout'
-import Clock from '../components/Clock'
-import Counter from '../components/Counter'
-import Submit from '../components/Submit'
-import PostList, {
-  ALL_POSTS_QUERY,
-  allPostsQueryVars,
-} from '../components/PostList'
+import Head from "next/head";
+import React from "react";
+import { Container, IconButton } from "@material-ui/core";
+import {
+  Header,
+  Body,
+  Footer,
+  ResHeader,
+  Carousel,
+  Basket,
+} from "../components";
+import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 
-const IndexPage = () => {
-  // Tick the time every second
-  const dispatch = useDispatch()
-
-  useInterval(() => {
-    dispatch({
-      type: 'TICK',
-      light: true,
-      lastUpdate: Date.now(),
-    })
-  }, 1000)
-
+const Public = () => {
   return (
-    <Layout>
-      {/* Redux */}
-      <Clock />
-      <Counter />
-      <hr />
-      {/* Apollo */}
-      <Submit />
-      <PostList />
-    </Layout>
-  )
-}
+    <Container>
+      <Head>
+        <title>FS-next-v</title>
+      </Head>
+      <a href='#' className='arrowUpward'>
+        <IconButton color='secondary' aria-label='arrowUpward'>
+          <ArrowUpwardIcon fontSize='inherit' />
+        </IconButton>
+      </a>
+      <span className='wrapper'>
+        <Basket />
+        <Header />
+      </span>
+      <ResHeader />
+      <Carousel />
+      <Body />
+      <Footer />
+    </Container>
+  );
+};
 
-export async function getStaticProps() {
-  const reduxStore = initializeStore()
-  const apolloClient = initializeApollo()
-  const { dispatch } = reduxStore
-
-  dispatch({
-    type: 'TICK',
-    light: true,
-    lastUpdate: Date.now(),
-  })
-
-  await apolloClient.query({
-    query: ALL_POSTS_QUERY,
-    variables: allPostsQueryVars,
-  })
-
-  return {
-    props: {
-      initialReduxState: reduxStore.getState(),
-      initialApolloState: apolloClient.cache.extract(),
-    },
-    revalidate: 1,
-  }
-}
-
-export default IndexPage
+export default Public;

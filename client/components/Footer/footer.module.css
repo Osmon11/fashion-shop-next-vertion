@@ -1,0 +1,150 @@
+.full {
+  width: 100%;
+  height: 100%;
+}
+
+.footer {
+  padding: 10vh 8vw;
+  border-top: 1px solid #e4e4e4;
+  background-color: #ffffff;
+}
+.f_body {
+  display: flex;
+  border-bottom: 1px solid #e4e4e4;
+  padding-bottom: 30px;
+}
+.f_fashion {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+}
+.f_form {
+  width: 70%;
+  margin-left: 20px;
+}
+.logo_case {
+  width: 140px;
+  height: 60px;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  background-color: #ffffff;
+}
+.footer_logo {
+  width: 100%;
+}
+.fashion_text {
+  font-size: 11px;
+  text-align: start;
+  color: #696969;
+  font-family: "Gotham - Book";
+  font-weight: 400;
+}
+.sing_up {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e4e4e4;
+}
+.sing_up h2 {
+  color: #444444;
+  font-family: Gotham;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+.f_info {
+  display: flex;
+}
+.f_info ul {
+  list-style: none;
+}
+.information,
+.customer,
+.store {
+  width: 33%;
+  padding-top: 15px;
+}
+.information span,
+.customer span,
+.store span {
+  font-size: 13px;
+  color: #696969;
+  font-family: "Gotham - Book";
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.information ul li,
+.customer ul li,
+.store ul li {
+  padding-top: 10px;
+  color: #696969;
+  font-size: 11px;
+  font-family: "Gotham";
+  font-weight: 300;
+}
+.footer ul li img {
+  width: 10px;
+  margin-right: 10px;
+}
+.store ul li:nth-child(1) img {
+  width: 8px;
+}
+.f_end {
+  color: #696969;
+  text-align: center;
+  font-family: "Gotham - Book";
+  font-size: 10px;
+  font-weight: 400;
+  padding: 30px;
+}
+
+@media (max-width: 1000px) {
+  .footer {
+    padding: 1rem;
+  }
+}
+@media (max-width: 950px) {
+  .information span,
+  .customer span,
+  .store span {
+    text-transform: lowercase;
+  }
+}
+@media (max-width: 710px) {
+  .information span,
+  .customer span,
+  .store span {
+    font-size: 12px;
+  }
+}
+@media (max-width: 630px) {
+  .f_body {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .f_form,
+  .f_fashion {
+    width: 100%;
+    margin-left: 0;
+  }
+}
+@media (max-width: 430px) {
+  .f_info {
+    flex-wrap: wrap;
+  }
+  .sing_up {
+    display: none;
+  }
+  .information,
+  .customer {
+    width: 50%;
+  }
+  .store {
+    width: 100%;
+    text-align: center;
+  }
+}

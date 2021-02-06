@@ -1,0 +1,19 @@
+.ordersDelete {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.orderZigzag {
+  width: 21px;
+}
+.ordersName {
+  font-size: 11px;
+  text-align: start;
+}
+.ordersDate {
+  font-size: 11px;
+  text-align: start;
+}
+.sum {
+  color: #4fc1ee;
+}

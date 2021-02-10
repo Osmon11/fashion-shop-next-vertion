@@ -173,6 +173,7 @@
 .cost_text {
   display: flex;
   justify-content: space-between;
+  padding-top: 10px;
 }
 .cost_text_cost span {
   font-size: 14px;
